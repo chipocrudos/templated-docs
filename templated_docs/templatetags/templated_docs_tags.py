@@ -21,7 +21,7 @@ class ImageNode(template.Node):
             if not isinstance(self.value, ImageFieldFile):
                 raise template.VariableDoesNotExist(
                     'Image argument should be an ImageField')
-            images = context.dicts[0].setdefault('ootemplate_imgs', {})
+            images = context.dicts[0].setdefault('_templated_docs_imgs', {})
 
             id = len(images)
             z_index = id + 3  # Magic
